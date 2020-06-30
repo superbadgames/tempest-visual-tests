@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<level name="Moving Boxes" width="1024" height="768" red="0.2" green="0.2" blue="0.2" pixelsize="32.0">
+<!--   
+    <fonts>
+        <load id="100" path=
+    </fonts>
+    <textures>
+        <load id="100" path="./Assets/Textures/Boxes/red_box_32_32.png"/>
+        <load id="101" path="./Assets/Textures/Boxes/green_box_32_32.png"/>
+        <load id="102" path="./Assets/Textures/Boxes/blue_box_32_32.png"/>
+    </textures>
+    <text>
+        <obj 
+    </text>
+-->    
+    <objects>
+        <dynamic>
+            <obj type="box" name="red" xpos="0.0" ypos="256.0" textureID="100" scale="1.0"></obj>
+            <obj type="box" name="green" xpos="341.33" ypos="0.0" textureID="101" scale="1.0"></obj>
+            <obj type="box" name="blue" xpos="-341.33" ypos="0.0" textureID="102" scale="1.0"></obj>
+        </dynamic>
+        <static>
+            <obj name="wall_1" xpos="200.0" ypos="100.0" textureID="103" scale="2.0"></obj>
+            <obj name="wall_2" xpos="-300.0" ypos="300.0" textureID="103" scale="2.0"></obj>
+            <obj name="wall_3" xpos="-300.0" ypos="-300.0" textureID="103" scale="2.0"></obj>
+            <obj name="wall_4" xpos="300.0" ypos="-300.0" textureID="103" scale="2.0"></obj>
+        </static>
+    </objects>
+</level>

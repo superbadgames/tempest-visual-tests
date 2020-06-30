@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>15.0</VCProjectVersion>
+    <ProjectGuid>{0dc478ea-9aa0-414e-875a-3c324e0efbcb}</ProjectGuid>
+    <RootNamespace>Test_Boxes</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="..\..\..\Tempest\Build\visual_studio\TempestCore.props" />
+    <Import Project="GameCommon.props" />
+    <Import Project="GameDebug.props" Condition="exists('GameDebug.props')" />
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\..\..\Tempest\Build\visual_studio\TempestCore.props" />
+    <Import Project="GameCommon.props" />
+    <Import Project="GameRelease.props" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="..\..\..\Tempest\Build\visual_studio\TempestCore.props" />
+    <Import Project="GameCommon.props" />
+    <Import Project="GameDebug.props" Condition="exists('GameDebug.props')" />
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\..\..\Tempest\Build\visual_studio\TempestCore.props" />
+    <Import Project="GameCommon.props" />
+    <Import Project="GameRelease.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup />
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <ForcedIncludeFiles>stdafx.h</ForcedIncludeFiles>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <ForcedIncludeFiles>stdafx.h</ForcedIncludeFiles>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <ForcedIncludeFiles>stdafx.h</ForcedIncludeFiles>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <ForcedIncludeFiles>stdafx.h</ForcedIncludeFiles>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\Implementations\Box.cpp" />
+    <ClCompile Include="..\..\Implementations\Cannon.cpp" />
+    <ClCompile Include="..\..\Implementations\Cube.cpp" />
+    <ClCompile Include="..\..\Implementations\Main.cpp" />
+    <ClCompile Include="..\..\Implementations\MovingBoxes.cpp" />
+    <ClCompile Include="..\..\Implementations\BoxesFactory.cpp" />
+    <ClCompile Include="..\..\Implementations\Projectile.cpp" />
+    <ClCompile Include="..\..\Implementations\stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\Headers\Boxes\Box.h" />
+    <ClInclude Include="..\..\Headers\Boxes\Cannon.h" />
+    <ClInclude Include="..\..\Headers\Boxes\Cube.h" />
+    <ClInclude Include="..\..\Headers\Boxes\DataBases.h" />
+    <ClInclude Include="..\..\Headers\Boxes\MovingBoxes.h" />
+    <ClInclude Include="..\..\Headers\Boxes\BoxesFactory.h" />
+    <ClInclude Include="..\..\Headers\Boxes\Projectile.h" />
+    <ClInclude Include="..\..\Headers\stdafx.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\Game\Assets\Shaders\basic_model_fragment.glsl" />
+    <None Include="..\..\Game\Assets\Shaders\basic_model_vertex.glsl" />
+    <None Include="..\..\Game\Assets\Shaders\fragment_pass_through.glsl" />
+    <None Include="..\..\Game\Assets\Shaders\lighting_directional_fragment.glsl" />
+    <None Include="..\..\Game\Assets\Shaders\lighting_directional_vertex.glsl" />
+    <None Include="..\..\Game\Assets\Shaders\lighting_point_fragment.glsl" />
+    <None Include="..\..\Game\Assets\Shaders\lighting_point_vertex.glsl" />
+    <None Include="..\..\Game\Assets\Shaders\lighting_spot_fragment.glsl" />
+    <None Include="..\..\Game\Assets\Shaders\lighting_spot_vertex.glsl" />
+    <None Include="..\..\Game\Assets\Shaders\light_fragment.glsl" />
+    <None Include="..\..\Game\Assets\Shaders\light_vertex.glsl" />
+    <None Include="..\..\Game\Assets\Shaders\model_fragment.glsl" />
+    <None Include="..\..\Game\Assets\Shaders\model_fragment_original.glsl" />
+    <None Include="..\..\Game\Assets\Shaders\model_lighting_fragment.glsl" />
+    <None Include="..\..\Game\Assets\Shaders\model_lighting_vertex.glsl" />
+    <None Include="..\..\Game\Assets\Shaders\model_vertex.glsl" />
+    <None Include="..\..\Game\Assets\Shaders\model_vertex_original.glsl" />
+    <None Include="..\..\Game\Assets\Shaders\sprite_fragment.glsl" />
+    <None Include="..\..\Game\Assets\Shaders\sprite_fragment_original.glsl" />
+    <None Include="..\..\Game\Assets\Shaders\sprite_geometry.glsl" />
+    <None Include="..\..\Game\Assets\Shaders\sprite_geometry_original.glsl" />
+    <None Include="..\..\Game\Assets\Shaders\sprite_vertex.glsl" />
+    <None Include="..\..\Game\Assets\Shaders\sprite_vertex_shader_original.glsl" />
+    <None Include="..\..\Game\Assets\Shaders\vertex_pass_through.glsl" />
+  </ItemGroup>
+  <ItemGroup>
+    <Xml Include="..\..\Game\Assets\Levels\moving_boxes.xml" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
