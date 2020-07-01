@@ -54,11 +54,11 @@ namespace Boxes
 //Data
 //
 //==========================================================================================================================
-        bool		_rotateRight;
-        bool 		_rotateLeft;
-        bool 		_rotateUp;
-        bool 		_rotateDown;
-        F32 		_angle;
-        U32 		_defaultShaderID;
+        bool _rotateRight;
+        bool _rotateLeft;
+        bool _rotateUp;
+        bool _rotateDown;
+        F32 _angle;
+        U32 _defaultShaderID;
     };//end Class
 }//end Namespace

@@ -1,17 +1,9 @@
 #include "stdafx.h"
-/*
-
-This needs to be refactored and made into something far more interesting. This is going to be a task for another day. 
-
 #include <Boxes/Demo3D.h>
 
 using namespace Boxes;
 
-//==========================================================================================================================
-//
-//Constructors	 	
-//
-//==========================================================================================================================
+
 Demo3D::Demo3D(void)
 :
 _useOrbit(true),
@@ -23,20 +15,18 @@ _bowlingPin(nullptr),
 _bunny(nullptr),
 _light(nullptr),
 _lightMovAngle(0.0f),
-_orbitCamera(make_shared<TE::OrbitCamera>()),
-_fpsCamera(make_shared<TE::FPSCamera>())
-{
-
-}
+_orbitCamera(),
+_fpsCamera()
+{  }
 
 Demo3D::~Demo3D(void)
 {  }
 
-void Demo3D::v_Init(void)
+void Demo3D::v_Init(string path)
 {
     Level::SetID(DEMO3D_ID);
-    Level::SetWidth(TE::OpenGLGameWindow::Instance()->GetWidth());
-    Level::SetHeight(TE::OpenGLGameWindow::Instance()->GetHeight());
+    //Level::SetWidth(TE::GameWindow::Instance()->GetWidth());
+    //Level::SetHeight(TE::GameWindow::Instance()->GetHeight());
     Level::SetBackgroundColor(TE::Color(0.2f, 0.4f, 0.5f));
 
     //Set up Cameras
@@ -62,20 +52,20 @@ void Demo3D::v_Init(void)
 
     TE::ShaderManager::Instance()->LoadShader(ligthShaderID, shaderData);
 
-    _orbitCamera->SetPerspective(45.0f, static_cast<F32>(Level::GetWidth()) / static_cast<F32>(Level::GetHeight()), 0.1f, 100.0f);
+    _orbitCamera.SetPerspective(45.0f, static_cast<F32>(Level::GetWidth()) / static_cast<F32>(Level::GetHeight()), 0.1f, 100.0f);
     //_orbitCamera->SetOrthographic(left, right, bottom, top, 0.01f, 100.0f);
-    _orbitCamera->SetPosition(0.0f, 0.0f, 0.0f);
+    _orbitCamera.SetPosition(0.0f, 0.0f, 0.0f);
     //Offset for robot to look right
     
 
-    _fpsCamera->SetPerspective(45.0f, static_cast<F32>(Level::GetWidth()) / static_cast<F32>(Level::GetHeight()), 0.1f, 100.0f);
+    _fpsCamera.SetPerspective(45.0f, static_cast<F32>(Level::GetWidth()) / static_cast<F32>(Level::GetHeight()), 0.1f, 100.0f);
     //_fpsCamera->SetOrthographic(left, right, bottom, top, -100.0f, 100.0f);
-    _fpsCamera->SetPosition(0.0f, 0.0f, 0.0f);
-    _fpsCamera->SetMoveSpeed(10.0f);
-    _fpsCamera->SetMouseSensitivity(0.1f);
-    _fpsCamera->SetDeadZone(0.2f);
+    _fpsCamera.SetPosition(0.0f, 0.0f, 0.0f);
+    _fpsCamera.SetMoveSpeed(10.0f);
+    _fpsCamera.SetMouseSensitivity(0.1f);
+    _fpsCamera.SetDeadZone(0.2f);
 
-    TE::OpenGLGameWindow::Instance()->SetCamera(_orbitCamera);
+    _camera = &_orbitCamera;
 
     //Crate1
     _crate1 = ProjectFactory::Instance()->MakeCube();

@@ -64,6 +64,9 @@
     <ClCompile Include="..\..\Implementations\BoxesFactory.cpp">
       <Filter>Source Files\Factory</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Implementations\Demo3D.cpp">
+      <Filter>Source Files\3D_Demo</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Headers\Boxes\DataBases.h">
@@ -89,6 +92,9 @@
     </ClInclude>
     <ClInclude Include="..\..\Headers\Boxes\BoxesFactory.h">
       <Filter>Source Files\Factory</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Headers\Boxes\Demo3D.h">
+      <Filter>Source Files\3D_Demo</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
