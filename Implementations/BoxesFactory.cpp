@@ -13,7 +13,7 @@ BoxesFactory::~BoxesFactory(void)
 
 }
 
-TE::p_GameObject2D BoxesFactory::v_Create(string type, const TM::Point2& pos, F32 scale, F32 pixelSize, U32 textureID)
+TE::p_GameObject2D BoxesFactory::v_Create2D(string type, const TM::Point2& pos, F32 scale, F32 pixelSize, U32 textureID)
 {
     if(strcmp(type.c_str(), "box") == 0)
     {
@@ -24,6 +24,21 @@ TE::p_GameObject2D BoxesFactory::v_Create(string type, const TM::Point2& pos, F3
         box->SetScale(scale);
 
         return box;
+    }
+    else
+    {
+        TE::ErrorManager::Instance()->SetError(TE::APPLICATION, "BoxesFactory::Create unable to create object with type " + type);
+        return nullptr;
+    }
+}
+
+TE::p_GameObject3D BoxesFactory::v_Create3D(string type, const TM::Point3& pos, F32 scale, F32 pixelSize, U32 textureID)
+{
+    if(strcmp(type.c_str(), "cube") == 0)
+    {
+        p_Cube cube = make_shared<Cube>();
+        
+        return cube;
     }
     else
     {

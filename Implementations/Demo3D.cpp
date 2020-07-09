@@ -3,7 +3,7 @@
 
 using namespace Boxes;
 
-
+/*
 Demo3D::Demo3D(void)
 :
 _useOrbit(true),
@@ -68,7 +68,7 @@ void Demo3D::v_Init(string path)
     _camera = &_orbitCamera;
 
     //Crate1
-    _crate1 = ProjectFactory::Instance()->MakeCube();
+    _crate1 = make_shared<Cube>();
     _crate1->InitCube("./Assets/Models/Course/crate.obj");
     _crate1->SetPosition(-5.0f, 0.0f, 0.0f);
     _crate1->SetTexture(TE::TextureManager::Instance()->GetTexture(500));

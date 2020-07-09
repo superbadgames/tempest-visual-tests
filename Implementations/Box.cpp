@@ -28,7 +28,7 @@ bool Box::OverlapCheck(const shared_ptr<Box> other)
     return _boundingBox.TestCollision(other->GetBounding());
 }
 
-void Box::v_OnCollide(U32 otherObjectID)
+void Box::v_OnCollide(string otherObjectID)
 {
     TE::p_GameObject2D otherObject = TE::GameObjectManager::Instance()->GetDynamicObject(otherObjectID);
     if(otherObject != nullptr)

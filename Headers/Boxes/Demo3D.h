@@ -25,13 +25,13 @@ namespace Boxes
     class Demo3D : public TE::Level
     {
     public:
-        Demo3D(void);
+        Demo3D(void) {}
 
-        ~Demo3D(void);
+        ~Demo3D(void) {}
 
-        void v_Init(string path) final;
+        void v_Init(string path) final {}
 
-        void v_Update(void) final;
+        void v_Update(void) final {}
 
     private:
         bool _useOrbit;

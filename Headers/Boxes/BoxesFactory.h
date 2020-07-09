@@ -5,6 +5,7 @@
 #include <Engine/Atom.h>
 #include <Engine/Factory.h>
 #include <Engine/GameObject2D.h>
+#include <Engine/GameObject3D.h>
 #include <Engine/TextureManager.h>
 
 namespace TE = Tempest;
@@ -24,7 +25,9 @@ namespace Boxes
 
         ~BoxesFactory(void);
 
-        TE::p_GameObject2D v_Create(string type, const TM::Point2& pos, F32 scale, F32 pixelSize, U32 textureID) final;
+        TE::p_GameObject2D v_Create2D(string type, const TM::Point2& pos, F32 scale, F32 pixelSize, U32 textureID) final;
+
+        TE::p_GameObject3D v_Create3D(string type, const TM::Point3& pos, F32 scale, F32 pixelSize, U32 textureID) final;
 
     private:
 

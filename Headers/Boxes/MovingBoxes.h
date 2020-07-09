@@ -49,7 +49,7 @@ namespace Boxes
 
         //void CheckCollisions(void);
 
-    private:		
+    private:
         U32 _redBoxID;
         U32 _greenBoxID;
         U32 _blueBoxID;
