@@ -52,7 +52,7 @@ void Cube::v_Update(void)
 //==========================================================================================================================
 void Cube::InitCube(string filePath)
 {
-    SetShader(TE::ShaderManager::Instance()->GetShader(_defaultShaderID));	
+    SetShader(TE::ShaderManager::Instance()->GetShader(_defaultShaderID));
 
     _mesh->LoadOBJ(filePath);
 }

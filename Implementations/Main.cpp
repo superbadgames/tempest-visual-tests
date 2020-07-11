@@ -55,7 +55,7 @@ Written by Maxwell Miller
 #include <Engine/OpenGLGameWindow.h>
 #include <Engine/TextureManager.h>
 #include <Engine/FontManager.h>
-#include <Engine/Engine.h>
+#include <Engine/Driver.h>
 #include <Engine/Color.h>
 #include <Engine/Shader.h>
 #include <Engine/AudioManager.h>
@@ -88,7 +88,7 @@ int main(void)
     bool useOpenGL = true; 
 
 
-    TE::Engine::Instance()->Init(wndWidth, wndHeight, wndTitle, wndFullScreen);
+    TE::Driver::Instance()->Init(wndWidth, wndHeight, wndTitle, wndFullScreen);
 
     TE::AudioManager::Instance();
     TE::ErrorManager::Instance()->DisplayErrors();
@@ -156,7 +156,7 @@ int main(void)
     //=====Add Levels=====
     
     //shared_ptr<SplashScreen> splashScreen = make_shared<SplashScreen>();
-    //TE::Engine::Instance()->SetActiveLevel(splashScreen);
+    //TE::Driver::Instance()->SetActiveLevel(splashScreen);
     
     /*shared_ptr<MainMenu> mainMenu = make_shared<MainMenu>();
     mainMenu->v_Init();
@@ -180,28 +180,28 @@ int main(void)
    /* p_DirectXTests directX = make_shared<DirectXTests>();
     directX->v_Init();*/
 
-    //TE::Engine::Instance()->SetActiveLevel(splashScreen);
-    TE::Engine::Instance()->SetActiveLevel(boxes);
-    //TE::Engine::Instance()->SetActiveLevel(level);
-    //TE::Engine::Instance()->SetActiveLevel(directX);
+    //TE::Driver::Instance()->SetActiveLevel(splashScreen);
+    TE::Driver::Instance()->SetActiveLevel(boxes);
+    //TE::Driver::Instance()->SetActiveLevel(level);
+    //TE::Driver::Instance()->SetActiveLevel(directX);
     
     if(TE::ErrorManager::Instance()->DisplayErrors())
     {
-        TE::Engine::Instance()->End();
+        TE::Driver::Instance()->End();
     }
 
-    while (TE::Engine::Instance()->Running()) 
+    while (TE::Driver::Instance()->Running()) 
     {
-        TE::Engine::Instance()->DisplayFPS();
-        TE::Engine::Instance()->Render();
-        TE::Engine::Instance()->Update();
+        TE::Driver::Instance()->DisplayFPS();
+        TE::Driver::Instance()->Render();
+        TE::Driver::Instance()->Update();
         
         if(TE::ErrorManager::Instance()->DisplayErrors())
         {
-            TE::Engine::Instance()->End();
+            TE::Driver::Instance()->End();
         }
 
     }
     
-    TE::Engine::Instance()->ShutDown();
+    TE::Driver::Instance()->ShutDown();
 }

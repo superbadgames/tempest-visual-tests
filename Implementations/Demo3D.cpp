@@ -3,24 +3,25 @@
 
 using namespace Boxes;
 
-/*
 Demo3D::Demo3D(void)
-:
-_useOrbit(true),
-_crate1(nullptr),
-_crate2(nullptr),
-_floor(nullptr),
-_robot(nullptr),
-_bowlingPin(nullptr),
-_bunny(nullptr),
-_light(nullptr),
-_lightMovAngle(0.0f),
-_orbitCamera(),
-_fpsCamera()
+    :
+    _useOrbit(true),
+    _crate1(nullptr),
+    _crate2(nullptr),
+    _floor(nullptr),
+    _robot(nullptr),
+    _bowlingPin(nullptr),
+    _bunny(nullptr),
+    _light(nullptr),
+    _lightMovAngle(0.0f),
+    _orbitCamera(),
+    _fpsCamera()
 {  }
 
 Demo3D::~Demo3D(void)
 {  }
+
+/*
 
 void Demo3D::v_Init(string path)
 {
@@ -69,11 +70,11 @@ void Demo3D::v_Init(string path)
 
     //Crate1
     _crate1 = make_shared<Cube>();
-    _crate1->InitCube("./Assets/Models/Course/crate.obj");
+    _crate1->Init("./Assets/Models/Course/crate.obj", 101);
     _crate1->SetPosition(-5.0f, 0.0f, 0.0f);
     _crate1->SetTexture(TE::TextureManager::Instance()->GetTexture(500));
     _crate1->SetColor(1.0f, 0.0f, 0.0f);
-    Level::AddObjectToLevel(_crate1);
+    TE::GameObjectManager::Instance()->Add
 
     //Crate2
     _crate2 = ProjectFactory::Instance()->MakeCube();
@@ -269,5 +270,4 @@ void Demo3D::v_Update(void)
     //Update light Position
     Level::SetObjectUniforms("light.position", lightPos);
 }
-
 */
