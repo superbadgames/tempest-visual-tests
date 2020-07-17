@@ -70,7 +70,7 @@ namespace TE = Tempest;
 //#include <Boxes/SplashScreen.h>
 #include <Boxes/MovingBoxes.h>
 //#include <Boxes/Ballistics.h>
-//#include <Boxes/Demo3D.h>
+#include <Boxes/Demo3D.h>
 //#include <Boxes/Box.h>
 //#include <Boxes/TiledTest.h>
 //#include <Boxes/DirectXTests.h>
@@ -165,25 +165,26 @@ int main(void)
     p_SplashScreen splashScreen = make_shared<SplashScreen>();
     splashScreen->v_Init();*/
 
-    p_MovingBoxes boxes = make_shared<MovingBoxes>();
+    /*p_MovingBoxes boxes = make_shared<MovingBoxes>();
     boxes->SetFactory(make_shared<BoxesFactory>());
     boxes->v_Init("./Assets/Levels/moving_boxes.xml");
 
-    TE::ErrorManager::Instance()->DisplayErrors();
+    TE::ErrorManager::Instance()->DisplayErrors();*/
     
     //p_TiledTest level = make_shared<TiledTest>();
     //level->v_Init();
 
-    //p_Demo3D level2 = make_shared<Demo3D>();
-    //level2->v_Init();
+    p_Demo3D demo3d = make_shared<Demo3D>();
+    demo3d->SetFactory(make_shared<BoxesFactory>());
+    demo3d->v_Init();
+
+    TE::ErrorManager::Instance()->DisplayErrors();
+    
 
    /* p_DirectXTests directX = make_shared<DirectXTests>();
     directX->v_Init();*/
 
-    //TE::Driver::Instance()->SetActiveLevel(splashScreen);
-    TE::Driver::Instance()->SetActiveLevel(boxes);
-    //TE::Driver::Instance()->SetActiveLevel(level);
-    //TE::Driver::Instance()->SetActiveLevel(directX);
+    TE::Driver::Instance()->SetActiveLevel(demo3d);
     
     if(TE::ErrorManager::Instance()->DisplayErrors())
     {

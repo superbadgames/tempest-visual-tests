@@ -30,19 +30,12 @@ namespace Boxes
 
         ~Demo3D(void);
 
-        void v_Init(string path) final {}
+        void v_Init(void) final;
 
-        void v_Update(void) final {}
+        void v_Update(void) final;
 
     private:
         bool _useOrbit;
-        TE::p_StaticGameObject3D _crate1;
-        TE::p_StaticGameObject3D _crate2;
-        TE::p_StaticGameObject3D _floor;
-        TE::p_StaticGameObject3D _robot;
-        TE::p_StaticGameObject3D _bowlingPin;
-        TE::p_StaticGameObject3D _bunny;
-        TE::p_StaticGameObject3D _light;
         F32 _lightMovAngle;
         TE::OrbitCamera _orbitCamera;
         TE::FPSCamera _fpsCamera;

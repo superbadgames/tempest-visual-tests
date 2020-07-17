@@ -44,10 +44,8 @@ namespace Boxes
         ~MovingBoxes(void) final;
 
         void v_Update(void);
-        
-        //void CheckBoxEdge(p_Box b);
 
-        //void CheckCollisions(void);
+        void v_Init(string path) final;
 
     private:
         U32 _redBoxID;
