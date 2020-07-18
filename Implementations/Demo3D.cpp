@@ -59,7 +59,7 @@ void Demo3D::v_Init(void)
     _fpsCamera.SetMouseSensitivity(0.1f);
     _fpsCamera.SetDeadZone(0.2f);
 
-    _camera = &_orbitCamera;
+    TE::CameraController::Instance()->SetCamera(&_orbitCamera);
 
     // All of these calls have to happen somewhere. Figure it out. 
     //Crate1
@@ -196,12 +196,12 @@ void Demo3D::v_Update(void)
 
         if(!_useOrbit)
         {
-            _camera = &_fpsCamera;
+            TE::CameraController::Instance()->SetCamera(&_fpsCamera);
             //TE::Driver::Instance()->DisableMouseCursor();
         }
         else
         {
-            _camera = &_orbitCamera;
+            TE::CameraController::Instance()->SetCamera(&_orbitCamera);
             //TE::OpenGLGameWindow::Instance()->EnableMouseCursor();
         }
     }
@@ -228,11 +228,11 @@ void Demo3D::v_Update(void)
 
         if(TE::Input::Instance()->GetKeyHeld(TE::W))
         {
-            _fpsCamera.v_Move(_fpsCamera.GetLookVector()); //forward
+            _fpsCamera.v_Move(_fpsCamera.GetLookDirection()); //forward
         }
         else if(TE::Input::Instance()->GetKeyHeld(TE::S))
         {
-            _fpsCamera.v_Move(_fpsCamera.GetLookVector() * -1.0f); //back
+            _fpsCamera.v_Move(_fpsCamera.GetLookDirection() * -1.0f); //back
         }
         
         if(TE::Input::Instance()->GetKeyHeld(TE::D))
@@ -246,11 +246,11 @@ void Demo3D::v_Update(void)
 
         if(TE::Input::Instance()->GetKeyHeld(TE::SPACE))
         {
-            _fpsCamera.v_Move(_fpsCamera.GetUpVector()); //up
+            _fpsCamera.v_Move(_fpsCamera.GetUpDirection()); //up
         }
         else if(TE::Input::Instance()->GetKeyHeld(TE::LSHIFT))
         {
-            _fpsCamera.v_Move(_fpsCamera.GetUpVector() * -1.0f); //down
+            _fpsCamera.v_Move(_fpsCamera.GetUpDirection() * -1.0f); //down
         }
     }
 

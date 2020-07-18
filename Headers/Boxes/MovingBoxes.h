@@ -45,8 +45,6 @@ namespace Boxes
 
         void v_Update(void);
 
-        void v_Init(string path) final;
-
     private:
         U32 _redBoxID;
         U32 _greenBoxID;

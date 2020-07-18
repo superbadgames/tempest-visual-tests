@@ -31,8 +31,3 @@ void MovingBoxes::v_Update(void)
         return;
     }
 }
-
-void MovingBoxes::v_Init(string path)
-{
-    _DefaultInit(path);
-}
