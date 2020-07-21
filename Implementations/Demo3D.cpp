@@ -49,8 +49,6 @@ void Demo3D::v_Init(void)
     _orbitCamera.SetPerspective(45.0f, static_cast<F32>(TE::Driver::Instance()->GetScreenWidth()) / static_cast<F32>(TE::Driver::Instance()->GetScreenHeight()), 0.1f, 100.0f);
     //_orbitCamera.SetOrthographic(left, right, bottom, top, 0.01f, 100.0f);
     _orbitCamera.SetPosition(0.0f, 0.0f, 0.0f);
-    //Offset for robot to look right
-    
 
     _fpsCamera.SetPerspective(45.0f, static_cast<F32>(TE::Driver::Instance()->GetScreenWidth()) / static_cast<F32>(TE::Driver::Instance()->GetScreenHeight()), 0.1f, 100.0f);
     //_fpsCamera.SetOrthographic(left, right, bottom, top, -100.0f, 100.0f);
@@ -61,7 +59,6 @@ void Demo3D::v_Init(void)
 
     TE::CameraController::Instance()->SetCamera(&_orbitCamera);
 
-    // All of these calls have to happen somewhere. Figure it out. 
     //Crate1
     TE::p_StaticGameObject3D crate1 {};
     crate1 = _factory->CreateStaticObject3D("./Assets/Models/Course/crate.obj", TM::Point3(0.0f), TM::Vector3(1.0f), TM::Vector3(1.0f), 500);
@@ -197,12 +194,12 @@ void Demo3D::v_Update(void)
         if(!_useOrbit)
         {
             TE::CameraController::Instance()->SetCamera(&_fpsCamera);
-            //TE::Driver::Instance()->DisableMouseCursor();
+            TE::Driver::Instance()->ToggleMouseCursor(false);
         }
         else
         {
             TE::CameraController::Instance()->SetCamera(&_orbitCamera);
-            //TE::OpenGLGameWindow::Instance()->EnableMouseCursor();
+            TE::Driver::Instance()->ToggleMouseCursor(true);
         }
     }
 

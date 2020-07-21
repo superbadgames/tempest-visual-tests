@@ -141,7 +141,6 @@
   <ItemGroup>
     <ClCompile Include="..\..\Implementations\Box.cpp" />
     <ClCompile Include="..\..\Implementations\Cannon.cpp" />
-    <ClCompile Include="..\..\Implementations\Cube.cpp" />
     <ClCompile Include="..\..\Implementations\Demo3D.cpp" />
     <ClCompile Include="..\..\Implementations\Main.cpp" />
     <ClCompile Include="..\..\Implementations\MovingBoxes.cpp" />
@@ -157,7 +156,6 @@
   <ItemGroup>
     <ClInclude Include="..\..\Headers\Boxes\Box.h" />
     <ClInclude Include="..\..\Headers\Boxes\Cannon.h" />
-    <ClInclude Include="..\..\Headers\Boxes\Cube.h" />
     <ClInclude Include="..\..\Headers\Boxes\DataBases.h" />
     <ClInclude Include="..\..\Headers\Boxes\Demo3D.h" />
     <ClInclude Include="..\..\Headers\Boxes\MovingBoxes.h" />

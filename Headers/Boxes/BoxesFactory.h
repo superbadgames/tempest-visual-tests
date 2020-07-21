@@ -4,8 +4,8 @@
 #include "stdafx.h"
 #include <Engine/Atom.h>
 #include <Engine/Factory.h>
-#include <Engine/GameObject2D.h>
-#include <Engine/GameObject3D.h>
+#include <Engine/StaticGameObject2D.h>
+#include <Engine/StaticGameObject3D.h>
 #include <Engine/TextureManager.h>
 
 namespace TE = Tempest;
@@ -14,7 +14,6 @@ namespace TE = Tempest;
 #include <Boxes/Box.h>
 #include <Boxes/Cannon.h>
 #include <Boxes/Projectile.h>
-#include <Boxes/Cube.h>
 
 namespace Boxes
 {

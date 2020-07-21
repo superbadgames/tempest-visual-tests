@@ -55,9 +55,6 @@
     <ClCompile Include="..\..\Implementations\Projectile.cpp">
       <Filter>Source Files\Ballistics</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Implementations\Cube.cpp">
-      <Filter>Source Files\3D_Demo</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\Implementations\stdafx.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -83,9 +80,6 @@
     </ClInclude>
     <ClInclude Include="..\..\Headers\Boxes\Projectile.h">
       <Filter>Source Files\Ballistics</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Headers\Boxes\Cube.h">
-      <Filter>Source Files\3D_Demo</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Headers\stdafx.h">
       <Filter>Source Files</Filter>
