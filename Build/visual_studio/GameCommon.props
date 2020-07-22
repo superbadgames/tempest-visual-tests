@@ -13,7 +13,8 @@
     </Link>
     <PreBuildEvent>
       <Command>xcopy /y/d "$(ProjectDir)..\..\..\Tempest\Bin\Tempest_$(PlatformName)_$(Configuration).dll" "$(OutDir)"
-xcopy /y/d "$(ProjectDir)..\..\..\Tempest\Lib_DLL\*.dll" "$(OutDir)"</Command>
+xcopy /y/d "$(ProjectDir)..\..\..\Tempest\Lib_DLL\*.dll" "$(OutDir)"
+xcopy /y/d "$(ProjectDir)..\..\..\Tempest\Assets\Shaders\*.glsl" "$(OutDir)\Assets\Shaders\"</Command>
     </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup />

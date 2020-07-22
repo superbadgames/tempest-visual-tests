@@ -29,9 +29,6 @@
     <Filter Include="Assets">
       <UniqueIdentifier>{5e59de1b-7756-4df5-a0d2-58a98969217f}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Assets\Shaders">
-      <UniqueIdentifier>{8d8348c3-b17d-405f-9ec1-94e7df281a03}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source Files\DirextXTests">
       <UniqueIdentifier>{f9ad6c02-1eb8-45a7-8d41-27b3e849de03}</UniqueIdentifier>
     </Filter>
@@ -90,80 +87,6 @@
     <ClInclude Include="..\..\Headers\Boxes\Demo3D.h">
       <Filter>Source Files\3D_Demo</Filter>
     </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="..\..\Game\Assets\Shaders\basic_model_fragment.glsl">
-      <Filter>Assets\Shaders</Filter>
-    </None>
-    <None Include="..\..\Game\Assets\Shaders\basic_model_vertex.glsl">
-      <Filter>Assets\Shaders</Filter>
-    </None>
-    <None Include="..\..\Game\Assets\Shaders\fragment_pass_through.glsl">
-      <Filter>Assets\Shaders</Filter>
-    </None>
-    <None Include="..\..\Game\Assets\Shaders\light_fragment.glsl">
-      <Filter>Assets\Shaders</Filter>
-    </None>
-    <None Include="..\..\Game\Assets\Shaders\light_vertex.glsl">
-      <Filter>Assets\Shaders</Filter>
-    </None>
-    <None Include="..\..\Game\Assets\Shaders\lighting_directional_fragment.glsl">
-      <Filter>Assets\Shaders</Filter>
-    </None>
-    <None Include="..\..\Game\Assets\Shaders\lighting_directional_vertex.glsl">
-      <Filter>Assets\Shaders</Filter>
-    </None>
-    <None Include="..\..\Game\Assets\Shaders\lighting_point_fragment.glsl">
-      <Filter>Assets\Shaders</Filter>
-    </None>
-    <None Include="..\..\Game\Assets\Shaders\lighting_point_vertex.glsl">
-      <Filter>Assets\Shaders</Filter>
-    </None>
-    <None Include="..\..\Game\Assets\Shaders\lighting_spot_fragment.glsl">
-      <Filter>Assets\Shaders</Filter>
-    </None>
-    <None Include="..\..\Game\Assets\Shaders\lighting_spot_vertex.glsl">
-      <Filter>Assets\Shaders</Filter>
-    </None>
-    <None Include="..\..\Game\Assets\Shaders\model_fragment.glsl">
-      <Filter>Assets\Shaders</Filter>
-    </None>
-    <None Include="..\..\Game\Assets\Shaders\model_fragment_original.glsl">
-      <Filter>Assets\Shaders</Filter>
-    </None>
-    <None Include="..\..\Game\Assets\Shaders\model_lighting_fragment.glsl">
-      <Filter>Assets\Shaders</Filter>
-    </None>
-    <None Include="..\..\Game\Assets\Shaders\model_lighting_vertex.glsl">
-      <Filter>Assets\Shaders</Filter>
-    </None>
-    <None Include="..\..\Game\Assets\Shaders\model_vertex.glsl">
-      <Filter>Assets\Shaders</Filter>
-    </None>
-    <None Include="..\..\Game\Assets\Shaders\model_vertex_original.glsl">
-      <Filter>Assets\Shaders</Filter>
-    </None>
-    <None Include="..\..\Game\Assets\Shaders\sprite_fragment.glsl">
-      <Filter>Assets\Shaders</Filter>
-    </None>
-    <None Include="..\..\Game\Assets\Shaders\sprite_fragment_original.glsl">
-      <Filter>Assets\Shaders</Filter>
-    </None>
-    <None Include="..\..\Game\Assets\Shaders\sprite_geometry.glsl">
-      <Filter>Assets\Shaders</Filter>
-    </None>
-    <None Include="..\..\Game\Assets\Shaders\sprite_geometry_original.glsl">
-      <Filter>Assets\Shaders</Filter>
-    </None>
-    <None Include="..\..\Game\Assets\Shaders\sprite_vertex.glsl">
-      <Filter>Assets\Shaders</Filter>
-    </None>
-    <None Include="..\..\Game\Assets\Shaders\sprite_vertex_shader_original.glsl">
-      <Filter>Assets\Shaders</Filter>
-    </None>
-    <None Include="..\..\Game\Assets\Shaders\vertex_pass_through.glsl">
-      <Filter>Assets\Shaders</Filter>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <Xml Include="..\..\Game\Assets\Levels\moving_boxes.xml">

@@ -165,11 +165,11 @@ int main(void)
     p_SplashScreen splashScreen = make_shared<SplashScreen>();
     splashScreen->v_Init();*/
 
-    /*p_MovingBoxes boxes = make_shared<MovingBoxes>();
+    p_MovingBoxes boxes = make_shared<MovingBoxes>();
     boxes->SetFactory(make_shared<BoxesFactory>());
-    boxes->v_Init("./Assets/Levels/moving_boxes.xml");
+    //boxes->v_Init("./Assets/Levels/moving_boxes.xml");
 
-    TE::ErrorManager::Instance()->DisplayErrors();*/
+    TE::ErrorManager::Instance()->DisplayErrors();
     
     //p_TiledTest level = make_shared<TiledTest>();
     //level->v_Init();

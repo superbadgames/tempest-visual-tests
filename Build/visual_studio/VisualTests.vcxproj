@@ -164,32 +164,6 @@
     <ClInclude Include="..\..\Headers\stdafx.h" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\..\Game\Assets\Shaders\basic_model_fragment.glsl" />
-    <None Include="..\..\Game\Assets\Shaders\basic_model_vertex.glsl" />
-    <None Include="..\..\Game\Assets\Shaders\fragment_pass_through.glsl" />
-    <None Include="..\..\Game\Assets\Shaders\lighting_directional_fragment.glsl" />
-    <None Include="..\..\Game\Assets\Shaders\lighting_directional_vertex.glsl" />
-    <None Include="..\..\Game\Assets\Shaders\lighting_point_fragment.glsl" />
-    <None Include="..\..\Game\Assets\Shaders\lighting_point_vertex.glsl" />
-    <None Include="..\..\Game\Assets\Shaders\lighting_spot_fragment.glsl" />
-    <None Include="..\..\Game\Assets\Shaders\lighting_spot_vertex.glsl" />
-    <None Include="..\..\Game\Assets\Shaders\light_fragment.glsl" />
-    <None Include="..\..\Game\Assets\Shaders\light_vertex.glsl" />
-    <None Include="..\..\Game\Assets\Shaders\model_fragment.glsl" />
-    <None Include="..\..\Game\Assets\Shaders\model_fragment_original.glsl" />
-    <None Include="..\..\Game\Assets\Shaders\model_lighting_fragment.glsl" />
-    <None Include="..\..\Game\Assets\Shaders\model_lighting_vertex.glsl" />
-    <None Include="..\..\Game\Assets\Shaders\model_vertex.glsl" />
-    <None Include="..\..\Game\Assets\Shaders\model_vertex_original.glsl" />
-    <None Include="..\..\Game\Assets\Shaders\sprite_fragment.glsl" />
-    <None Include="..\..\Game\Assets\Shaders\sprite_fragment_original.glsl" />
-    <None Include="..\..\Game\Assets\Shaders\sprite_geometry.glsl" />
-    <None Include="..\..\Game\Assets\Shaders\sprite_geometry_original.glsl" />
-    <None Include="..\..\Game\Assets\Shaders\sprite_vertex.glsl" />
-    <None Include="..\..\Game\Assets\Shaders\sprite_vertex_shader_original.glsl" />
-    <None Include="..\..\Game\Assets\Shaders\vertex_pass_through.glsl" />
-  </ItemGroup>
-  <ItemGroup>
     <Xml Include="..\..\Game\Assets\Levels\moving_boxes.xml" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

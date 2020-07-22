@@ -36,7 +36,6 @@ namespace Boxes
 
     private:
         bool _useOrbit;
-        F32 _lightMovAngle;
         TE::OrbitCamera _orbitCamera;
         TE::FPSCamera _fpsCamera;
         
