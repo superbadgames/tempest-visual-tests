@@ -19,7 +19,7 @@ void Demo3D::v_Init(void)
 {
     SetID(DEMO3D_ID);
     //Level::SetBackgroundColor(TE::Color(0.2f, 0.3f, 0.4f));
-    SetBackgroundColor(TE::Color(0.2f, 0.2f, 0.2f));
+    SetBackgroundColor(TE::Color(0.01f, 0.05f, 0.01f));
 
     _orbitCamera.SetPerspective();
     _orbitCamera.SetPosition(0.0f, 0.0f, 0.0f);
@@ -33,13 +33,14 @@ void Demo3D::v_Init(void)
     TE::CameraController::Instance()->SetCamera(&_orbitCamera);
 
     TE::p_StaticGameObject3D cube1 {};
-    cube1 = _factory->CreateStaticObject3D("./Assets/Models/Course/crate.obj", 0, TM::Point3(0.0f), TM::Vector3(1.0f), TM::Vector3(1.0f), 500);
-    
-    cube1->SetColor(TE::Color(0.7f, 0.7f, 0.7f));
-    cube1->GetShader()->SetUniformVec3("ambient_light_color", TE::Color(1.0f, 1.0f, 1.0f));
-    cube1->GetShader()->SetUniform("directional_light_position", TM::Vector3(0.0f, 10.0f, 0.0f));
-    
+    cube1 = _factory->CreateStaticObject3D("./Assets/Models/Course/bunny.obj", 0, TM::Point3(0.0f), TM::Vector3(1.0f), TM::Vector3(1.0f), 500);
+    cube1->SetColor(TE::Color(1.0f, 0.7f, 0.7f));
     TE::GameObjectManager::Instance()->AddStaticObject3D(cube1);
+    
+    TE::ShaderManager::Instance()->SetAllUnformsColorAsVec3("ambient_light_color", TE::Color(1.0f, 1.0f, 1.0f));
+    TE::ShaderManager::Instance()->SetAllUniforms("directional_light_position", TM::Vector3(25.0f, 10.0f, 10.0f));
+    TE::ShaderManager::Instance()->SetAllUniforms("specular_factor", 0.08f);
+    TE::ShaderManager::Instance()->SetAllUniforms("specular_shine", 250.0f);
 }
 
 void Demo3D::v_Update(void)
@@ -116,4 +117,6 @@ void Demo3D::v_Update(void)
             _fpsCamera.v_Move(_fpsCamera.GetUpDirection() * -1.0f); //down
         }
     }
+
+    TE::ShaderManager::Instance()->SetAllUniforms("camera_position", viewPos);
 }
