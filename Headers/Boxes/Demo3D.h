@@ -13,6 +13,7 @@
 #include <Engine/ShaderManager.h>
 #include <Engine/GameObjectManager.h>
 #include <Engine/StaticGameObject3D.h>
+#include <Engine/Light.h>
 
 namespace TE = Tempest;
 namespace TM = TempestMath;
@@ -38,6 +39,7 @@ namespace Boxes
         bool _useOrbit;
         TE::OrbitCamera _orbitCamera;
         TE::FPSCamera _fpsCamera;
+        TE::Light _directional;
         
     };//end Class
     typedef shared_ptr<Demo3D> p_Demo3D;
