@@ -1,5 +1,5 @@
 #include "stdafx.h"
-#include <Boxes/Demo3D.h>
+#include "Game/Demo3D.h"
 
 using namespace Boxes;
 

@@ -18,8 +18,8 @@
 namespace TE = Tempest;
 namespace TM = TempestMath;
 
-#include <Boxes/DataBases.h>
-#include <Boxes/BoxesFactory.h>
+#include "Game/DataBases.h"
+#include "Project_Boxes/BoxesFactory.h"
 
 namespace Boxes
 {
