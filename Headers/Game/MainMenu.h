@@ -15,11 +15,11 @@ Written by Maxwell Miller
 #include <Engine/LevelManager.h>
 #include <Engine/OpenGLGameWindow.h>
 #include <Engine/Level.h>
-#include <Engine/Controller.h>
+#include <Engine/Input.h>
 #include <Engine/TextureManager.h>
 #include <Engine/FontManager.h>
 #include <Engine/Text.h>
-#include <Engine/Engine.h>
+#include <Engine/Driver.h>
 #include <Engine/Point2.h>
 #include <Engine/Color.h>
 #include <Engine/Menu.h>

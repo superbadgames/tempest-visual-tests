@@ -18,29 +18,26 @@
 namespace TE = Tempest;
 namespace TM = TempestMath;
 
+#include "Boxes/Factory.h"
 #include "Game/DataBases.h"
-#include "Project_Boxes/BoxesFactory.h"
 
-namespace Boxes
+
+class Demo3D : public TE::Level
 {
+public:
+    Demo3D(void);
 
-    class Demo3D : public TE::Level
-    {
-    public:
-        Demo3D(void);
+    ~Demo3D(void);
 
-        ~Demo3D(void);
+    void v_Init(void) final;
 
-        void v_Init(void) final;
+    void v_Update(void) final;
 
-        void v_Update(void) final;
+private:
+    bool _useOrbit;
+    TE::OrbitCamera _orbitCamera;
+    TE::FPSCamera _fpsCamera;
+    TE::Light _directional;
 
-    private:
-        bool _useOrbit;
-        TE::OrbitCamera _orbitCamera;
-        TE::FPSCamera _fpsCamera;
-        TE::Light _directional;
-        
-    };//end Class
-    typedef shared_ptr<Demo3D> p_Demo3D;
-}//end Namespace
+};//end Class
+typedef shared_ptr<Demo3D> p_Demo3D;

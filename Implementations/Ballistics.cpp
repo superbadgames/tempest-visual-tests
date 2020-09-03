@@ -1,7 +1,6 @@
 #include "stdafx.h"
-#include <Boxes/Ballistics.h>
+#include "Game/Ballistics.h"
 
-using namespace Boxes;
 
 //=============================================================================
 //
@@ -11,7 +10,7 @@ using namespace Boxes;
 Ballistics::Ballistics(void) 
 :
 _poolSize(10),
-_activeProjectileType(ProjectileType::BULLET),
+_activeProjectileType(Boxes::ProjectileType::BULLET),
 _levelTitle(),
 _cannon(nullptr),
 p_gravityForce(nullptr)
@@ -33,46 +32,41 @@ Ballistics::~Ballistics(void)
 void Ballistics::v_Init(void)
 {
     SetID(BALLISTICS_ID);
-    SetWidth(TE::Engine::Instance()->GetScreenWidth());
-    SetHeight(TE::Engine::Instance()->GetScreenHeight());
+    SetWidth(TE::Driver::Instance()->GetScreenWidth());
+    SetHeight(TE::Driver::Instance()->GetScreenHeight());
     SetBackgroundColor(TE::Color(0.2f, 0.2f, 0.2f));
 
-    DefaultInit();
+    _DefaultInit();
 
-    F32 left = TE::Engine::Instance()->GetScreenLeft();
-    F32 bottom = TE::Engine::Instance()->GetScreenBottom();
-    F32 top = TE::Engine::Instance()->GetScreenTop();
+    F32 left = TE::Driver::Instance()->GetScreenLeft();
+    F32 bottom = TE::Driver::Instance()->GetScreenBottom();
+    F32 top = TE::Driver::Instance()->GetScreenTop();
 
     _levelTitle.SetFont(TE::FontManager::Instance()->GetFont(100));
     _levelTitle.AddText("BALLISTICS");
     _levelTitle.SetPosition(TM::Point2(-_levelTitle.GetWidth(), top - (top * 0.1f)));
-    Level::AddTextToLevel(_levelTitle);
-    
 
     //=====Setup GameObjects=====
-    _cannon = ProjectFactory::Instance()->MakeCannon();
+    //TODO::Make the cannon using the factory. You may have to teach it how to make a cannon.
     //minus because left and bottom are already negative
     _cannon->SetPosition(left - (left / 10.0f), bottom - (bottom / 10.0f));
-    _cannon->SetScale(25.0f, 25.0f);
+    _cannon->SetScale(5.0f);
     _cannon->SetMovementSpeed(120.0f);
     _cannon->SetTopBoundary(top);
     _cannon->SetBottomBoundary(bottom);
     _cannon->SetTexture(TE::TextureManager::Instance()->GetTexture(300));
-    Level::AddObjectToLevel(_cannon);
+    
 
     
     for(U32 i = 0; i < _poolSize; ++i)
     {
-        p_Projectile p = ProjectFactory::Instance()->MakeProjectile();
-        p->SetScale(10.0f, 10.0f);
-        _cannon->AddToPool(p);
-        Level::AddObjectToLevel(p);
-        Level::RegisterRigidBody2DForce(p->GetRigidBody(), p_gravityForce);
+        //TODO::Make a projectile from the factory called p.
+        //TODO::Set the scale of the projectile.
+        //TODO:: Called Cannon::AddToPool, registering the projectile with the cannon.
+        //TODO:: Add the projectile to the GameObjectManager.
+        //TODO:: Register the projectile with a gravity force.
     }
-
-    //TODO:: Once level's call init when they are set to active, this can be removed
-    TE::Engine::Instance()->EnableMouseCursor();
-}	
+}
 
 //=============================================================================
 //
@@ -81,41 +75,41 @@ void Ballistics::v_Init(void)
 //=============================================================================
 void Ballistics::v_Update(void)
 {
-    if(TE::Controller::Instance()->GetKeyDown(TE::Keys::ESCAPE)) 
+    if(TE::Input::Instance()->GetKeyDown(TE::Keys::ESCAPE)) 
     { 
-        TE::Engine::Instance()->SetActiveLevel(TE::LevelManager::Instance()->GetLevel(MAIN_MENU_ID));
+        TE::Driver::Instance()->SetActiveLevel(TE::LevelManager::Instance()->GetLevel(MAIN_MENU_ID));
         return;
     }
 
     //===== Get User Input =====
-    if(TE::Controller::Instance()->GetKeyDown(TE::Keys::ONE))
+    if(TE::Input::Instance()->GetKeyDown(TE::Keys::ONE))
     {
-        _activeProjectileType = BULLET;
+        _activeProjectileType = Boxes::ProjectileType::BULLET;
     }
-    else if(TE::Controller::Instance()->GetKeyDown(TE::Keys::TWO))
+    else if(TE::Input::Instance()->GetKeyDown(TE::Keys::TWO))
     {
-        _activeProjectileType = ARTILLERY;
+        _activeProjectileType = Boxes::ProjectileType::ARTILLERY;
     }
-    else if(TE::Controller::Instance()->GetKeyDown(TE::Keys::THREE))
+    else if(TE::Input::Instance()->GetKeyDown(TE::Keys::THREE))
     {
-        _activeProjectileType = MISSILE;
+        _activeProjectileType = Boxes::ProjectileType::MISSILE;
     }
-    else if(TE::Controller::Instance()->GetKeyDown(TE::Keys::FOUR))
+    else if(TE::Input::Instance()->GetKeyDown(TE::Keys::FOUR))
     {
-        _activeProjectileType = FIRE_BALL;
+        _activeProjectileType = Boxes::ProjectileType::FIRE_BALL;
     }
-    else if(TE::Controller::Instance()->GetKeyDown(TE::Keys::FIVE))
+    else if(TE::Input::Instance()->GetKeyDown(TE::Keys::FIVE))
     {
-        _activeProjectileType = LAZER;
+        _activeProjectileType = Boxes::ProjectileType::LAZER;
     }
-    else if(TE::Controller::Instance()->GetKeyDown(TE::Keys::SIX))
+    else if(TE::Input::Instance()->GetKeyDown(TE::Keys::SIX))
     {
-        _activeProjectileType = GRENADE;
+        _activeProjectileType = Boxes::ProjectileType::GRENADE;
     }
 
-    if(TE::Controller::Instance()->GetKeyDown(TE::Keys::LEFT_MOUSE)) 
+    if(TE::Input::Instance()->GetKeyDown(TE::Keys::LEFT_MOUSE)) 
     { 
-        TM::Point2 input = TE::Controller::Instance()->GetMouseCoordInScreen();
+        TM::Point2 input = TE::Input::Instance()->GetMouseCoordInScreen();
 
         TM::Vector2 heading = TM::Vector2(input - _cannon->GetPosition());
 

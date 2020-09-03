@@ -1,8 +1,6 @@
 #include "stdafx.h"
 #include "Game/Demo3D.h"
 
-using namespace Boxes;
-
 Demo3D::Demo3D(void)
     :
     _useOrbit(true),
@@ -10,7 +8,7 @@ Demo3D::Demo3D(void)
     _fpsCamera(),
     _directional()
 {
-    SetFactory(make_shared<BoxesFactory>());
+    SetFactory(make_shared<Boxes::Factory>());
 }
 
 Demo3D::~Demo3D(void)

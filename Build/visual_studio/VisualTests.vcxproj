@@ -139,13 +139,22 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\Implementations\Box.cpp" />
-    <ClCompile Include="..\..\Implementations\Cannon.cpp" />
+    <ClCompile Include="..\..\Implementations\Ballistics.cpp" />
     <ClCompile Include="..\..\Implementations\Demo3D.cpp" />
     <ClCompile Include="..\..\Implementations\Main.cpp" />
+    <ClCompile Include="..\..\Implementations\MainMenu.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="..\..\Implementations\MovingBoxes.cpp" />
-    <ClCompile Include="..\..\Implementations\BoxesFactory.cpp" />
-    <ClCompile Include="..\..\Implementations\Projectile.cpp" />
+    <ClCompile Include="..\..\Implementations\SplashScreen.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="..\..\Implementations\stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
@@ -154,14 +163,22 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\Headers\Boxes\Box.h" />
-    <ClInclude Include="..\..\Headers\Boxes\Cannon.h" />
-    <ClInclude Include="..\..\Headers\Boxes\DataBases.h" />
-    <ClInclude Include="..\..\Headers\Boxes\Demo3D.h" />
-    <ClInclude Include="..\..\Headers\Boxes\MovingBoxes.h" />
-    <ClInclude Include="..\..\Headers\Boxes\BoxesFactory.h" />
-    <ClInclude Include="..\..\Headers\Boxes\Projectile.h" />
-    <ClInclude Include="..\..\Headers\stdafx.h" />
+    <ClInclude Include="..\..\Headers\Game\Ballistics.h" />
+    <ClInclude Include="..\..\Headers\Game\DataBases.h" />
+    <ClInclude Include="..\..\Headers\Game\Demo3D.h" />
+    <ClInclude Include="..\..\Headers\Game\MainMenu.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="..\..\Headers\Game\MovingBoxes.h" />
+    <ClInclude Include="..\..\Headers\Game\SplashScreen.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Xml Include="..\..\Game\Assets\Levels\moving_boxes.xml" />

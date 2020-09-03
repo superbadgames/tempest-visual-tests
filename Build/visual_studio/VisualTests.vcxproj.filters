@@ -14,78 +14,63 @@
     <Filter Include="Source Files\SplashScreen">
       <UniqueIdentifier>{bb730b26-3238-4e50-b3dc-8470a4fca390}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\MainMenu">
-      <UniqueIdentifier>{6782a219-559d-4fcd-a21d-ebed3019b941}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source Files\3D_Demo">
       <UniqueIdentifier>{0222f974-75df-4e14-8292-18d4e1d3672d}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\Factory">
-      <UniqueIdentifier>{60fc00a8-d4d5-4f94-8a9c-cf4c27931a92}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\TiledTest">
-      <UniqueIdentifier>{d852b01a-57a4-4de2-adae-0fcfd867636d}</UniqueIdentifier>
     </Filter>
     <Filter Include="Assets">
       <UniqueIdentifier>{5e59de1b-7756-4df5-a0d2-58a98969217f}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\DirextXTests">
-      <UniqueIdentifier>{f9ad6c02-1eb8-45a7-8d41-27b3e849de03}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Assets\Levels">
       <UniqueIdentifier>{7c61a2a2-97c4-447a-9a67-0e28d9263a0c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Main">
+      <UniqueIdentifier>{aed3fc57-0a9c-4eb9-8af7-bab9678929ab}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\MainMenu">
+      <UniqueIdentifier>{e25fa1ef-c4eb-4b20-8a3b-26924b91da94}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\Implementations\Main.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\Implementations\MovingBoxes.cpp">
       <Filter>Source Files\MovingBoxes</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Implementations\Box.cpp">
-      <Filter>Source Files\MovingBoxes</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Implementations\Cannon.cpp">
-      <Filter>Source Files\Ballistics</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Implementations\Projectile.cpp">
-      <Filter>Source Files\Ballistics</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Implementations\stdafx.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Implementations\BoxesFactory.cpp">
-      <Filter>Source Files\Factory</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Implementations\Demo3D.cpp">
       <Filter>Source Files\3D_Demo</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Implementations\Main.cpp">
+      <Filter>Source Files\Main</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Implementations\stdafx.cpp">
+      <Filter>Source Files\Main</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Implementations\MainMenu.cpp">
+      <Filter>Source Files\MainMenu</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Implementations\Ballistics.cpp">
+      <Filter>Source Files\Ballistics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Implementations\SplashScreen.cpp">
+      <Filter>Source Files\SplashScreen</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\Headers\Boxes\DataBases.h">
-      <Filter>Source Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Headers\Boxes\MovingBoxes.h">
-      <Filter>Source Files\MovingBoxes</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Headers\Boxes\Box.h">
-      <Filter>Source Files\MovingBoxes</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Headers\Boxes\Cannon.h">
+    <ClInclude Include="..\..\Headers\Game\Ballistics.h">
       <Filter>Source Files\Ballistics</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Headers\Boxes\Projectile.h">
-      <Filter>Source Files\Ballistics</Filter>
+    <ClInclude Include="..\..\Headers\Game\DataBases.h">
+      <Filter>Source Files\Main</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Headers\stdafx.h">
-      <Filter>Source Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Headers\Boxes\BoxesFactory.h">
-      <Filter>Source Files\Factory</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Headers\Boxes\Demo3D.h">
+    <ClInclude Include="..\..\Headers\Game\Demo3D.h">
       <Filter>Source Files\3D_Demo</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Headers\Game\MovingBoxes.h">
+      <Filter>Source Files\MovingBoxes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Headers\Game\SplashScreen.h">
+      <Filter>Source Files\SplashScreen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Headers\Game\MainMenu.h">
+      <Filter>Source Files\MainMenu</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

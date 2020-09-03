@@ -18,7 +18,8 @@ namespace TP = TempestPhysics;
 
 namespace Boxes
 {
-    enum ProjectileType
+
+    enum class ProjectileType
     {
         BULLET,
         ARTILLERY,
@@ -31,6 +32,8 @@ namespace Boxes
     class Projectile : public TE::GameObject2D
     {
     public:
+        
+        
         BOXES_API Projectile(void);
 
         BOXES_API ~Projectile(void);

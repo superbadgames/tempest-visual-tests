@@ -1,13 +1,6 @@
 #include "stdafx.h"
-#include <Boxes/MovingBoxes.h>
+#include "Game/MovingBoxes.h"
 
-using namespace Boxes;
-
-//=============================================================================
-//
-//Constructor
-//
-//=============================================================================
 MovingBoxes::MovingBoxes(void)
     :
     _redBoxID(0),
@@ -26,7 +19,6 @@ void MovingBoxes::v_Update(void)
     if(TE::Input::Instance()->GetKeyDown(TE::Keys::ESCAPE))
     {
         TE::AudioManager::Instance()->StopSource(2);
-        //TE::Engine::Instance()->SetActiveLevel(TE::LevelManager::Instance()->GetLevel(MAIN_MENU_ID));
         TE::Driver::Instance()->End();
         return;
     }

@@ -17,7 +17,7 @@ xcopy /y/d "$(ProjectDir)..\..\..\Tempest\Lib_DLL\*.dll" "$(OutDir)"
 xcopy /y/d "$(ProjectDir)..\..\..\Tempest\Assets\Shaders\*.glsl" "$(OutDir)\Assets\Shaders\"
 xcopy /y/d "$(ProjectDir)..\..\..\Project_Boxes\Bin\Project_Boxes_$(PlatformName)_$(Configuration).dll" "$(OutDir)"
 xcopy /y/d "$(ProjectDir)..\..\..\Project_Boxes\Bin\Project_Boxes_$(PlatformName)_$(Configuration).lib" "$(ProjectDir)..\..\Lib"
-xcopy /y/d "$(ProjectDir)..\..\..\Project_Boxes\Headers\Boxes\*.h" "$(ProjectDir)..\..\Headers\Project_Boxes\"</Command>
+xcopy /y/d "$(ProjectDir)..\..\..\Project_Boxes\Headers\Boxes\*.h" "$(ProjectDir)..\..\Headers\Boxes\"</Command>
     </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup />

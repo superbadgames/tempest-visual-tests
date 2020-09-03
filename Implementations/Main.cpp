@@ -1,4 +1,10 @@
-#pragma once
+#if DEBUG
+#pragma comment(lib, "Tempest_Win32_Debug.lib")
+#pragma comment(lib, "Project_Boxes_Win32_Debug.lib")
+#else
+#pragma comment(lib, "Tempest_Win32_Release.lib")
+#pragma comment(lib, "Project_Boxes_Win32_Debug.lib")
+#endif
 
 #include "stdafx.h"
 #include <Engine/Atom.h>
@@ -18,25 +24,17 @@
 
 namespace TE = Tempest;
 
-#include <Boxes/BoxesFactory.h>
-//#include <Boxes/MainMenu.h>
-//#include <Boxes/SplashScreen.h>
-#include <Boxes/MovingBoxes.h>
-//#include <Boxes/Ballistics.h>
-#include <Boxes/Demo3D.h>
-//#include <Boxes/Box.h>
-//#include <Boxes/TiledTest.h>
-//#include <Boxes/DirectXTests.h>
-
-using namespace Boxes;
+#include "Boxes/Factory.h"
+#include "Game/MovingBoxes.h"
+#include "Game/Demo3D.h"
 
 
 int main(void)
 {
 //=====Window Parameter Constants=====
-    S32 wndWidth  	   = 1024;
-    S32 wndHeight 	   = 768;
-    string wndTitle	   = "Killer Engine UI Tests v0.1";
+    S32 wndWidth = 1024;
+    S32 wndHeight = 768;
+    string wndTitle = "Tempest Demo";
     bool wndFullScreen = false;
     bool useOpenGL = true; 
 
@@ -73,8 +71,6 @@ int main(void)
 
     TE::AudioManager::Instance()->SetListener();
 
-    
-    
     shared_ptr<TE::AudioClip> skate = make_shared<TE::AudioClip>();
     skate->LoadWAV2("./Assets/Audio/Komiku_04_Skate.wav");
 
@@ -96,48 +92,42 @@ int main(void)
     TE::AudioManager::Instance()->AddSource(1, background);
     TE::AudioManager::Instance()->AddSource(2, movingBoxesBackground);
 
-    //TE::AudioManager::Instance()->LoadClip(1, "./Assets/Audio/Komiku_04_Skate.wav");
-    //TE::AudioManager::Instance()->LoadClip(2, "./Assets/Audio/Komiku_07_Battle_of_Pogs.wav");
-    //TE::AudioManager::Instance()->LoadSource(1);
-    //TE::AudioManager::Instance()->AddClipToSource(1, 1);
-    
-    //continue adding textures for glfw tests
-
     TE::ErrorManager::Instance()->DisplayErrors();
 
 
     //=====Add Levels=====
+    // Removed for now. These will be used again when the Main Menu has been refactored or when there is a better way 
+    // to switch between levels. 
+/*
+    shared_ptr<SplashScreen> splashScreen = make_shared<SplashScreen>();
+    TE::Driver::Instance()->SetActiveLevel(splashScreen);
     
-    //shared_ptr<SplashScreen> splashScreen = make_shared<SplashScreen>();
-    //TE::Driver::Instance()->SetActiveLevel(splashScreen);
-    
-    /*shared_ptr<MainMenu> mainMenu = make_shared<MainMenu>();
+    shared_ptr<MainMenu> mainMenu = make_shared<MainMenu>();
     mainMenu->v_Init();
     TE::LevelManager::Instance()->Add(mainMenu);
 
     p_SplashScreen splashScreen = make_shared<SplashScreen>();
-    splashScreen->v_Init();*/
+    splashScreen->v_Init();
+    
+    p_TiledTest level = make_shared<TiledTest>();
+    level->v_Init();
+*/
 
     p_MovingBoxes boxes = make_shared<MovingBoxes>();
-    boxes->SetFactory(make_shared<BoxesFactory>());
-    //boxes->v_Init("./Assets/Levels/moving_boxes.xml");
+    boxes->SetFactory(make_shared<Boxes::Factory>());
+    // Do not Init in order to prevent two levels being loaded at the same time. 
+    boxes->v_Init("./Assets/Levels/moving_boxes.xml");
 
     TE::ErrorManager::Instance()->DisplayErrors();
-    
-    //p_TiledTest level = make_shared<TiledTest>();
-    //level->v_Init();
 
     p_Demo3D demo3d = make_shared<Demo3D>();
-    demo3d->SetFactory(make_shared<BoxesFactory>());
-    demo3d->v_Init();
+    demo3d->SetFactory(make_shared<Boxes::Factory>());
+    //demo3d->v_Init();
 
     TE::ErrorManager::Instance()->DisplayErrors();
-    
 
-   /* p_DirectXTests directX = make_shared<DirectXTests>();
-    directX->v_Init();*/
-
-    TE::Driver::Instance()->SetActiveLevel(demo3d);
+    TE::Driver::Instance()->SetActiveLevel(boxes);
+    //TE::Driver::Instance()->SetActiveLevel(demo3d);
     
     if(TE::ErrorManager::Instance()->DisplayErrors())
     {
