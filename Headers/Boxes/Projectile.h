@@ -8,7 +8,7 @@
 #include <Engine/Timer.h>
 #include <Engine/TextureManager.h>
 #include <Engine/PhysicsFactory.h>
-#include <Engine/Point2.h>
+#include <Engine/Vector2.h>
 
 namespace TE = Tempest;
 namespace TM = TempestMath;

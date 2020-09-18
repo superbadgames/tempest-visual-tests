@@ -39,7 +39,7 @@ int main(void)
     bool useOpenGL = true; 
 
 
-    TE::Driver::Instance()->Init(wndWidth, wndHeight, wndTitle, wndFullScreen);
+    TE::Driver::Instance()->Init(wndWidth, wndHeight, wndTitle, wndFullScreen, useOpenGL);
 
     TE::AudioManager::Instance();
     TE::ErrorManager::Instance()->DisplayErrors();
@@ -116,18 +116,18 @@ int main(void)
     p_MovingBoxes boxes = make_shared<MovingBoxes>();
     boxes->SetFactory(make_shared<Boxes::Factory>());
     // Do not Init in order to prevent two levels being loaded at the same time. 
-    //boxes->v_Init("./Assets/Levels/moving_boxes.xml");
+    boxes->v_Init("./Assets/Levels/moving_boxes.xml");
 
     TE::ErrorManager::Instance()->DisplayErrors();
+    TE::Driver::Instance()->SetActiveLevel(boxes);
 
     p_Demo3D demo3d = make_shared<Demo3D>();
     demo3d->SetFactory(make_shared<Boxes::Factory>());
-    demo3d->v_Init();
+    //demo3d->v_Init();
 
     TE::ErrorManager::Instance()->DisplayErrors();
+    //TE::Driver::Instance()->SetActiveLevel(demo3d);
 
-    TE::Driver::Instance()->SetActiveLevel(boxes);
-    TE::Driver::Instance()->SetActiveLevel(demo3d);
     
     if(TE::ErrorManager::Instance()->DisplayErrors())
     {
@@ -136,6 +136,10 @@ int main(void)
 
     while (TE::Driver::Instance()->Running()) 
     {
+        if(TE::Input::Instance()->GetKeyDown(TE::Keys::F1))
+        {
+            DebugBreak();
+        }
         TE::Driver::Instance()->DisplayFPS();
         TE::Driver::Instance()->Render();
         TE::Driver::Instance()->Update();
